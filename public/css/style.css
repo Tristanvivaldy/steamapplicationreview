@@ -586,16 +586,8 @@ video {
   grid-column: span 2 / span 2;
 }
 
-.col-span-4 {
-  grid-column: span 4 / span 4;
-}
-
 .col-span-5 {
   grid-column: span 5 / span 5;
-}
-
-.col-span-6 {
-  grid-column: span 6 / span 6;
 }
 
 .m-auto {
@@ -622,12 +614,16 @@ video {
   margin-top: 0.75rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -642,17 +638,33 @@ video {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
 .size-6 {
   width: 1.5rem;
   height: 1.5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-screen {
   height: 100vh;
+}
+
+.max-h-\[30px\] {
+  max-height: 30px;
+}
+
+.max-h-40 {
+  max-height: 10rem;
+}
+
+.max-h-5 {
+  max-height: 1.25rem;
+}
+
+.max-h-60 {
+  max-height: 15rem;
 }
 
 .min-h-full {
@@ -754,17 +766,16 @@ video {
   gap: 1.5rem;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
 
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.rounded-b-none {
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
 }
 
 .rounded-r-lg {
@@ -810,6 +821,16 @@ video {
   background-color: rgb(182 169 158 / var(--tw-bg-opacity, 1));
 }
 
+.bg-neutral-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
+}
+
 .bg-semiLightBrown {
   --tw-bg-opacity: 1;
   background-color: rgb(162 149 138 / var(--tw-bg-opacity, 1));
@@ -818,6 +839,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-yellow-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 98 7 / var(--tw-bg-opacity, 1));
 }
 
 .bg-yellow-950 {
@@ -908,6 +934,14 @@ video {
   padding-top: 3.5rem;
 }
 
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -918,6 +952,10 @@ video {
 
 .text-right {
   text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .text-start {
@@ -1032,6 +1070,10 @@ video {
 
 .hover\:opacity-50:hover {
   opacity: 0.5;
+}
+
+.hover\:opacity-70:hover {
+  opacity: 0.7;
 }
 
 .hover\:transition:hover {

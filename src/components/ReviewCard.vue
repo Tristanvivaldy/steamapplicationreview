@@ -25,15 +25,18 @@
           </div>
         </div>
       </div>
-      <div class="px-5 py-3">
-        <div v-if="percentage !== undefined">
+      <div class="py-3">
+        <div
+          v-if="percentage !== undefined"
+          class="max-h-60 text-justify px-5 overflow-y-auto"
+        >
           <span v-for="(data, index) in review" :key="index">
             <li>
               {{ data }}
             </li>
           </span>
         </div>
-        <div v-else>
+        <div class="max-h-60 text-justify px-5 overflow-y-auto" v-else>
           {{ review }}
         </div>
       </div>
