@@ -80,6 +80,15 @@ export default {
       selected_app_id: null,
       items: [],
       list_applications: [],
+      admin_guid: JSON.parse(
+        atob(
+          localStorage
+            .getItem("token")
+            .split(".")[1]
+            .replace("-", "+")
+            .replace("_", "/")
+        )
+      ).guid,
     };
   },
   mounted() {
@@ -112,7 +121,7 @@ export default {
     },
     addApps() {
       Axios.post(`http://localhost:8080/steam`, {
-        admin_guid: "0ecc8552-778f-4ca0-8b61-5afba96384cb",
+        admin_guid: this.admin_guid,
         app_id: this.selected_app.value.toString(),
         app_name: this.selected_app.text,
       })

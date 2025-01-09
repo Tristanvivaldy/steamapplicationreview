@@ -81,7 +81,7 @@ export default {
         password: this.password,
       })
         .then((response) => {
-          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("token", response.data.data.token);
           this.$router.push("/admin");
         })
         .catch((error) => {

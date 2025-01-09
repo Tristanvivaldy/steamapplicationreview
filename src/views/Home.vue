@@ -37,7 +37,10 @@
             <div class="px-5 py-3 text-xl font-semibold border-b-2">
               Aplikasi
             </div>
-            <div v-if="filteredApps.length > 0">
+            <div
+              v-if="filteredApps.length > 0"
+              class="max-h-96 overflow-y-auto"
+            >
               <div
                 class="px-5 py-3 even:bg-white odd:bg-semiLightBrown"
                 v-for="(app, index) in filteredApps"
@@ -95,7 +98,10 @@
                 v-if="selected_app != null && activeTab === 'review'"
               >
                 <p class="font-bold font-xl">{{ app_name }}</p>
-                <div v-if="not_null_review">
+                <div
+                  v-if="not_null_review"
+                  class="max-h-96 overflow-y-auto py-4 px-6"
+                >
                   <ReviewCard
                     v-for="(app, index) in review_app"
                     :key="index"
@@ -103,13 +109,13 @@
                     :voted_up="app.voted_up"
                   />
                 </div>
-                <div class="mt-4" v-else>Tidak ada Review</div>
+                <div class="mt-4 py-4 px-6" v-else>Tidak ada Review</div>
               </div>
 
               <!-- Untuk Analisis -->
               <div>
                 <div
-                  class="text-start py-4 px-6"
+                  class="text-start py-4 px-6 max-h-96 overflow-y-auto"
                   v-if="selected_app != null && activeTab === 'analisis'"
                 >
                   <p class="font-bold font-xl">{{ app_name }}</p>
@@ -119,7 +125,7 @@
                     :voted_up="analisis_app.voted_up"
                     :review="analisis_app.summary"
                   />
-                  <div class="mt-4" v-else>Tidak ada Summary</div>
+                  <div class="mt-4 py-4 px-6" v-else>Tidak ada Summary</div>
                 </div>
               </div>
             </div>
