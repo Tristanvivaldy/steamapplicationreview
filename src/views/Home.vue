@@ -58,7 +58,9 @@
             <div v-else class="px-5 py-3">Tidak ada Aplikasi</div>
           </div>
           <div class="border border-gray-400 col-span-2 rounded-lg">
-            <div class="px-5 py-3 bg-semiLightBrown flex items-start gap-6">
+            <div
+              class="px-5 py-3 bg-semiLightBrown flex justify-center items-center gap-6"
+            >
               <button
                 @click="setTab('review')"
                 :class="{

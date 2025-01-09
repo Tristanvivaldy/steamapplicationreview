@@ -41,7 +41,8 @@
         <v-form>
           <v-card width="400" title="Add Application">
             <template v-slot:text>
-              <div>
+              <div v-if="isLoading">Loading..</div>
+              <div v-else>
                 <v-select
                   v-model="selected_app_id"
                   :items="list_applications"
@@ -77,6 +78,7 @@ export default {
   data() {
     return {
       dialog: false,
+      isLoading: true,
       selected_app_id: null,
       items: [],
       list_applications: [],
@@ -106,6 +108,7 @@ export default {
         });
     },
     getSteamApps() {
+      this.isLoading = true;
       Axios.get(`http://localhost:8080/steam/get_api`)
         .then((response) => {
           this.list_applications = response.data.data
@@ -114,9 +117,11 @@ export default {
               text: app.name,
               value: app.appid,
             }));
+          this.isLoading = false;
         })
         .catch((error) => {
           console.error(error);
+          this.isLoading = false;
         });
     },
     addApps() {
