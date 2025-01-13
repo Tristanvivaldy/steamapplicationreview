@@ -8,15 +8,22 @@
           <div class="col-span-2" v-if="voted_up == true">
             <RecommendedIcon :width="35" :height="35" />
           </div>
-          <div class="col-span-2" v-else>
+          <div class="col-span-2" v-else-if="voted_up == false">
             <NotRecommendedIcon :width="35" :height="35" />
           </div>
-          <div v-if="voted_up == true" class="col-span-5 text-white text-md">
+          <div class="col-span-2" v-else>
+            <NeutralIcon :width="35" :height="35" />
+          </div>
+          <div class="col-span-5 text-white text-md" v-if="voted_up == true">
             Recommended
           </div>
-          <div class="col-span-5 text-white text-md" v-else>
+          <div
+            class="col-span-5 text-white text-md"
+            v-else-if="voted_up == false"
+          >
             Not Recommended
           </div>
+          <div class="col-span-5 text-white text-md" v-else>Neutral</div>
           <div
             class="col-span-5 text-right text-white text-md font-bold"
             v-if="percentage !== undefined"
@@ -48,9 +55,11 @@
 <script>
 import RecommendedIcon from "../assets/icon/RecommendedIcon.vue";
 import NotRecommendedIcon from "../assets/icon/NotRecommendedIcon.vue";
+import NeutralIcon from "../assets/icon/NeutralIcon.vue";
+
 export default {
   name: "CardReview",
-  components: { RecommendedIcon, NotRecommendedIcon },
+  components: { RecommendedIcon, NotRecommendedIcon, NeutralIcon },
   props: {
     voted_up: { type: Boolean, required: true },
     review: { type: String, required: true },

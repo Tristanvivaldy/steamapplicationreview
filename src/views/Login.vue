@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center bg-loginBg w-screen h-screen">
     <div class="bg-white rounded-lg shadow-lg">
-      <div class="grid grid-cols-2">
+      <div class="grid grid-cols-2 animate-fade-right animate-once">
         <div class="p-20">
           <p class="text-3xl font-bold">Welcome</p>
           <p class="mt-2">Silahkan masukan data untuk masuk</p>
@@ -28,20 +28,20 @@
               @click="login"
               type="submit"
               value="Login"
-              class="py-2 px-28 bg-darkBrown text-white font-semibold rounded-lg cursor-pointer hover:bg-semiLightBrown"
+              class="py-2 px-28 bg-darkBrown text-white font-semibold rounded-lg cursor-pointer hover:bg-semiLightBrown hover:duration-200"
             />
           </div>
           <div class="mt-3 flex justify-center items-center">
             <router-link
               to="/"
-              class="py-2 px-28 bg-yellow-950 text-white font-semibold rounded-lg cursor-pointer hover:bg-yellow-800"
+              class="py-2 px-28 bg-yellow-950 text-white font-semibold rounded-lg cursor-pointer hover:bg-yellow-800 hover:duration-200"
             >
               Guest
             </router-link>
           </div>
         </div>
         <div>
-          <div class="relative">
+          <div class="relative animate-fade-left animate-once">
             <img
               src="../assets/images/landing-login.jpg"
               alt="landing-login"
@@ -52,6 +52,7 @@
               class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
               <img
+                class="animate-wiggle-more animate-infinite"
                 src="../assets/images/logo-login.jpg"
                 width="150"
                 alt="logo-login"

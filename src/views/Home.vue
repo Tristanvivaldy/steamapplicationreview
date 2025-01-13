@@ -1,6 +1,9 @@
 <template>
   <div class="p-4">
-    <div v-if="isLoading" class="flex justify-center items-center h-screen">
+    <div
+      v-if="isLoading"
+      class="flex justify-center items-center h-screen animate-jump-in"
+    >
       <LoadingIcon :width="200" :height="200" />
     </div>
     <div v-else>
@@ -32,14 +35,14 @@
             class="flex-1 focus:outline-none placeholder:text-darkBrown"
           />
         </div>
-        <div class="mt-8 grid grid-cols-3 w-7/12 m-auto gap-4">
+        <div class="mt-8 grid grid-cols-3 w-10/12 m-auto gap-4">
           <div class="border border-gray-400 col-span-1 rounded-lg">
             <div class="px-5 py-3 text-xl font-semibold border-b-2">
               Aplikasi
             </div>
             <div
               v-if="filteredApps.length > 0"
-              class="max-h-96 overflow-y-auto"
+              class="max-h-[50vh] overflow-y-auto"
             >
               <div
                 class="px-5 py-3 even:bg-white odd:bg-semiLightBrown"
@@ -102,7 +105,7 @@
                 <p class="font-bold font-xl">{{ app_name }}</p>
                 <div
                   v-if="not_null_review"
-                  class="max-h-96 overflow-y-auto py-4 px-6"
+                  class="max-h-[50vh] overflow-y-auto pr-5"
                 >
                   <ReviewCard
                     v-for="(app, index) in review_app"
